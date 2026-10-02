@@ -1,0 +1,14 @@
+/.project
+/.buildpath
+/.settings
+/debug/
+*.*~
+\#*.*
+\#*\#
+.\#*.*
+*.exe
+*.gox
+.idea
+TestMapFile*
+*.so
+*.dbf
