@@ -335,7 +335,7 @@ Use **`NullClause`** when the query's result schema can be established with a si
 
 Use **`SchemaQuery`** when the result schema needs to be described independently of the executable SQL, particularly for complex queries or subqueries.
 
-Use **`NoResults`** for named queries that execute commands and return no rows.
+Use **`SqhemaQuery: NoResults`** for named queries that execute commands and return no rows.
 
 ## Example
 
