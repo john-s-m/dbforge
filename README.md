@@ -19,10 +19,10 @@ Example:
 Database: telemetry
 
 Tables:
-  - Table: ai_telemetry
+  - Table: system_telemetry
     Methods: all
 
-  - Table: ai_request
+  - Table: system_request
     Methods: select, insert, update
 
 Queries:
@@ -31,7 +31,7 @@ Queries:
     Arguments: requestId string, provider string
     Query: |
       SELECT *
-      FROM ai_telemetry
+      FROM system_telemetry
       WHERE request_id = ${requestId}
         AND provider = ${provider}
 
@@ -40,7 +40,7 @@ Queries:
     Arguments: provider string
     Query: |
       SELECT provider, COUNT(*)
-      FROM ai_telemetry
+      FROM system_telemetry
       WHERE provider = ${provider}
       GROUP BY provider
 ```
@@ -71,7 +71,7 @@ A subset may be specified:
 
 ```yaml
 Tables:
-  - Table: ai_request
+  - Table: system_request
     Methods: select, insert, update
 ```
 
@@ -96,7 +96,7 @@ Queries:
     Arguments: requestId string, provider string
     Query: |
       SELECT *
-      FROM ai_telemetry
+      FROM system_telemetry
       WHERE request_id = ${requestId}
         AND provider = ${provider}
 ```
@@ -185,12 +185,12 @@ For example:
 ```yaml
 SchemaQuery: |
   SELECT provider, 1
-  FROM ai_telemetry
+  FROM system_telemetry
   WHERE 1 = 2
 
 Query: |
   SELECT provider, COUNT(*)
-  FROM ai_telemetry
+  FROM system_telemetry
   WHERE provider = ${provider}
   GROUP BY provider
 ```
@@ -214,7 +214,7 @@ NullClause: "1 = 0"
 
 Query: |
   SELECT *
-  FROM ai_telemetry
+  FROM system_telemetry
   WHERE request_id = ${requestId}
 ```
 
@@ -340,7 +340,7 @@ Use **`SqhemaQuery: NoResults`** for named queries that execute commands and ret
 ## Example
 
 ```yaml
-Database: haleform
+Database: testdatabase
 
 Tables:
   - Table: user
@@ -370,7 +370,7 @@ Queries:
 
   - QueryName: DeleteUserPermission
     SchemaQuery: |
-      SELECT NoResults
+      NoResults
     Arguments: userId int32, permissionId int32
     Query: |
       DELETE FROM user_permission
