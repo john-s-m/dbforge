@@ -45,7 +45,7 @@ Queries:
       GROUP BY provider
 ```
 
-`Database` is required, and a configuration must contain at least one table or query. The YAML is parsed and validated before generation. fileciteturn15file0L663-L680
+`Database` is required, and a configuration must contain at least one table or query. The YAML is parsed and validated before generation. 
 
 ## Tables
 
@@ -65,7 +65,7 @@ Supported methods are:
 - `delete`
 - `all`
 
-`all` expands to all four standard methods. Method names are normalized to lowercase during validation. fileciteturn15file0L199-L248
+`all` expands to all four standard methods. Method names are normalized to lowercase during validation. 
 
 A subset may be specified:
 
@@ -139,9 +139,9 @@ WHERE user_id = ${userId}
   AND role_id = ${roleId}
 ```
 
-DBForge converts these substitutions to SQL `?` parameters in the generated query and preserves their occurrence order. If an argument appears more than once, it appears more than once in the generated parameter list. fileciteturn15file0L497-L594
+DBForge converts these substitutions to SQL `?` parameters in the generated query and preserves their occurrence order. If an argument appears more than once, it appears more than once in the generated parameter list. 
 
-Every declared argument must be used, and every `${...}` reference must correspond to a declared argument. fileciteturn15file0L535-L594
+Every declared argument must be used, and every `${...}` reference must correspond to a declared argument.
 
 ## Generated named-query structures
 
@@ -218,7 +218,7 @@ Query: |
   WHERE request_id = ${requestId}
 ```
 
-DBForge requires every named query to provide either `SchemaQuery` or `NullClause`. fileciteturn15file0L151-L168
+DBForge requires every named query to provide either `SchemaQuery` or `NullClause`.
 
 Use `NullClause` when it is sufficient. Use `SchemaQuery` when the schema needs to be described independently, particularly for more complex SQL and subqueries.
 
@@ -268,9 +268,9 @@ The query processor recognizes SQL regions that must not be interpreted as DBFor
 - `#` comments
 - block comments
 
-Only `${argument}` expressions outside those regions are processed. fileciteturn15file0L319-L567
+Only `${argument}` expressions outside those regions are processed.
 
-Supported argument-name characters are letters, digits, and underscore. fileciteturn15file0L312-L317
+Supported argument-name characters are letters, digits, and underscore. 
 
 ## Query validation
 
@@ -285,9 +285,9 @@ It checks that:
 - every argument has a name;
 - every argument has a datatype;
 - every `${argument}` reference is declared;
-- every declared argument is actually used. fileciteturn15file0L597-L660
+- every declared argument is actually used.
 
-Table definitions are also validated for required names, methods, and supported operations. fileciteturn15file0L199-L248
+Table definitions are also validated for required names, methods, and supported operations.
 
 ## Generated API philosophy
 
