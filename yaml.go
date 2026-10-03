@@ -46,7 +46,7 @@ Queries:
         AND provider = ?
 
   - QueryName: GetProviderStats
-    NullClause: "1 = 0"
+    SchemaQuery: select provider, 1 from ai_telemetry where 1 = 2
     Arguments: provider string
     Query: |
       SELECT provider, COUNT(*)
